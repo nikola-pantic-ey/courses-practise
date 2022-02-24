@@ -1,0 +1,16 @@
+
+
+.chart-bar{
+    height:20px;
+    width:10px;
+}
+
+.chart-bar-fill{
+
+background-color: red;
+
+}
+
+.chart-bar-inner{
+    height:100%;
+}
