@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './expenses-form.css'
+import styles from './expenses-form.module.css'
 
 function ExpensesForm(props) {
 
@@ -29,13 +29,13 @@ else alert('You must fill all fields')
 if(formVisibility===false){
 
     return ( 
-        <div className="expenses-form">
+        <div className={styles['expenses-form']}>
             <button className='add-new-expense-button' onClick={()=>setFormVisibility(true)}>Add new expense</button>
         </div>
     )
 }
 else return (
-<div className="expenses-form">
+<div className={styles['expenses-form']}>
     <div className="form-fields">
     <div className='form-field'>
         <div>Expense</div>

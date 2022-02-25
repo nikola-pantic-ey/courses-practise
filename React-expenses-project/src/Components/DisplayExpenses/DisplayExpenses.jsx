@@ -30,9 +30,11 @@ const chartDataPoints=[
 
 
 for(const expense of filteredExpenses){
-const expenseMonth=new Date(expense.date).getMonth()
-chartDataPoints[expenseMonth].value+=expense.price
+    const expenseMonth=new Date(expense.date).getMonth()
+    chartDataPoints[expenseMonth].value+=expense.price
 }
+
+
     return ( 
 <div className="display-expenses">
 

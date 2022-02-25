@@ -1,14 +1,41 @@
-import './expense-items.css'
+import { useState } from 'react';
+import styled from 'styled-components'
 
 
-function ExpenseItems(props) {
+
+
+
+const ExpenseItemsStyled=styled.div`
+display: flex;
+align-items: center;
+justify-content: space-around;
+width:100%;
+margin: 50px auto;
+padding: 20px;
+background-color: rebeccapurple;
+color:white;
+`
+
+const ExpenseName=styled.div`
+background-color:red
+`
+
+function ExpenseItems({expense}) {
+    const [valid, setValid]=useState(true)
+
+    const changeValid=()=>{ setValid(!valid)}
+    
     return ( 
-        <div className="expense-items">
-<div className="expense-name">Title: {props.expense.name}</div>
-<div className="expense-date">Date: {props.expense.date}</div>
-<div className="expense-price">Amount: {props.expense.price}</div> 
-        </div>
+        <ExpenseItemsStyled className={!valid && 'invalid'}>
+{/* <div className="expense-name">Title: {expense.name}</div> */}
+<ExpenseName onClick={changeValid}>Title: {expense.name}</ExpenseName>
+<div className="expense-date">Date: {expense.date}</div>
+<div className="expense-price">Amount: {expense.price}</div> 
+        </ExpenseItemsStyled>
      );
 }
+
+
+
 
 export default ExpenseItems;
